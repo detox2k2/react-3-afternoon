@@ -1,15 +1,27 @@
-.App__parent {
-  width: 100%;
-  min-width: 1000px;
-  min-height: 100vh;
+* {
+  background: rgb(248, 246, 246);
+}
+.Card {
+  background-color: white;
+  height: 50vh;
+  width: 65vw;
+  margin: 200px auto;
 }
 
-.App__content {
-  width: 1000px;
-  margin: 0 auto;
-  min-height: calc( 100vh - 50px );
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+.Home {
+  height: 15%;
+  width: 100%;
+  background: rgb(137, 227, 255);
+  font-size: 30px;
+}
+
+.Name {
+  font-size: 30px;
+  background-color: white;
+}
+.List h2{
+  background-color: white;
+}
+.MovieList ol{
+  background-color: white;
 }
