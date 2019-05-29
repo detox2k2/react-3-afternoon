@@ -84,7 +84,8 @@ export default class Post extends Component {
 
         {/* This is where the text goes. Notice the turnary statement. The turnary statement decides to display either the text OR the editor view
             You can also think of it as being written as so:
-              if( this.state.editing === true ) {
+             
+            if( this.state.editing === true ) {
                 <Edit ... />
               } else {
                 <span ... ></span>

@@ -31,6 +31,7 @@ export default class Edit extends Component {
     // More destructuring!
     const { hideEdit } = this.props;
     const { text } = this.state;
+    const { id } = this.props
 
     return (
       <section className="Edit__parent">
@@ -42,12 +43,12 @@ export default class Edit extends Component {
           {/* This saves your changes made */}
           <button id="Edit__controls-update" 
                   className="Edit__control-btn"
-                  onClick={ this.props.updatePostFn }>
+                  onClick={  this.updatePost }>
             Update
           </button>
 
           {/* This cancels the edit mode and does not save changes. Remember the "hideEdit" method was passed down through props */}
-          <button id="Edit__controsl-cancel"
+          <button id="Edit__control-cancel"
                   className="Edit__control-btn"
                   onClick={ hideEdit }>
             Cancel

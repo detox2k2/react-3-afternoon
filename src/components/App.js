@@ -23,8 +23,8 @@ componentDidMount() {
   });
 }
 
-updatePost(id, text){
-  axios.put(`https://practiceapi.devmountain.com/api/posts?id=${ id }`,{ text }). then ( results => {
+updatePost(id, text){ console.log(id, text)
+  axios.put(`https://practiceapi.devmountain.com/api/posts?id=${ id }`,{ text }). then ( results => { 
     this.setState({ posts: results.data})
   })
 };
@@ -40,15 +40,26 @@ createPost(text){
 };
 
 render() {
-  const {posts} = this.state;
-  return (
-    <div className='App__parent'>
-    <Header/>
-    <section className='App___content'>
-    <Compose createPostFn={ this.createPost }/>
-    {posts.map(post => (<Post key={post.id} text={post.text} date={ post.date} id={ post.id} 
-    updatePostFn= {this.updatePost} 
-    deletePostFn= {this.deletePost}/>))}
+  const { posts } = this.state;
+
+    return (
+      <div className="App__parent">
+        <Header />
+
+        <section className="App__content">
+
+          <Compose createPostFn={ this.createPost } />
+          
+          {
+            posts.map( post => (
+              <Post key={ post.id }
+                    id={ post.id }
+                    text={ post.text}
+                    date={ post.date }
+                    updatePostFn={ this.updatePost }
+                    deletePostFn={ this.deletePost } />
+            ))
+          }
     </section>
     </div>
   );
